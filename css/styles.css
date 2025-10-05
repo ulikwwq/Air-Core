@@ -450,3 +450,23 @@ main.container {
     height: calc(100vh - 160px); /* немного меньше для мобильных */
   }
 }
+
+/* Контейнер карты */
+.map-container {
+  height: calc(100vh - 120px); /* учитываем header и небольшой запас */
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  width: 100%;
+  position: relative; /* чтобы z-index работал */
+  z-index: 0; /* карта ниже футера */
+}
+
+/* Footer — всегда поверх карты */
+footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000; /* верхний слой */
+}
+
