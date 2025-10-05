@@ -6,6 +6,12 @@ body {
   color: #333;
 }
 
+a{
+    text-decoration: none;
+}
+
+
+
 /* header/footer — оставляем как есть, но добавим маленькие правки */
 header {
   background-color: #fff;
@@ -154,3 +160,141 @@ footer {
 .health-alert.alert-danger { background-color: #fff6f6; }
 .health-alert.alert-warning { background-color: #fffdf6; }
 .health-alert.alert-info { background-color: #f6fdff; }
+
+/* ===== Чат-бот ===== */
+.chat-container {
+  max-width: 720px;
+  margin: 0 auto 100px auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+}
+
+.chat-messages {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.message {
+  padding: 10px 14px;
+  border-radius: 12px;
+  max-width: 75%;
+  word-wrap: break-word;
+}
+
+.message.user {
+  align-self: flex-end;
+  background-color: #0b6efd;
+  color: #fff;
+}
+
+.message.bot {
+  align-self: flex-start;
+  background-color: #f1f1f1;
+  color: #333;
+}
+
+#chat-input {
+  flex-grow: 1;
+}
+
+#chat-send-btn {
+  flex-shrink: 0;
+}
+
+@media (max-width: 576px) {
+  .chat-container {
+    height: 400px;
+    padding: 8px;
+  }
+  .message {
+    padding: 8px 10px;
+  }
+}
+
+/* ===== Информационные блоки ===== */
+.info-block {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+  padding: 16px;
+  margin: 12px auto;
+  max-width: 720px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.info-block:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.08);
+}
+
+.info-icon {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #0b6efd, #0056b3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: #fff;
+}
+
+.info-content h2 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 6px 0;
+  color: #0b6efd;
+}
+
+.info-content p {
+  font-size: 14px;
+  margin: 0;
+  line-height: 1.5;
+  color: #333;
+}
+
+/* Адаптивность */
+@media (max-width: 576px) {
+  .info-block {
+    flex-direction: row;
+    padding: 12px;
+    border-radius: 10px;
+    margin: 8px;
+  }
+  .info-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+  .info-content h2 {
+    font-size: 15px;
+  }
+  .info-content p {
+    font-size: 14px;
+  }
+}
+
+.info-block{
+  text-decoration: none; /* убираем подчёркивание ссылок */
+}
+
+.info-block:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.08);
+  text-decoration: none; /* убираем подчёркивание ссылок */
+}
+
+

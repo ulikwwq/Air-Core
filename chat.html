@@ -25,10 +25,19 @@
     </button>
   </header>
 
-  <main>
-    <h1 class="text-center mt-5">Чат-бот</h1>
-    <p class="text-center">Здесь будет интерфейс чата.</p>
-  </main>
+<main class="container main-with-padding">
+  <h1 class="text-center mt-4">Чат-бот</h1>
+  <p class="text-center mt-4">в будущем интриграция с ИИ</p>
+
+  <div class="chat-container card p-3 mt-4">
+    <div id="chat-messages" class="chat-messages mb-3"></div>
+    <div class="d-flex">
+      <input type="text" id="chat-input" class="form-control me-2" placeholder="Напишите сообщение..." aria-label="Сообщение">
+      <button id="chat-send-btn" class="btn btn-primary">Отправить</button>
+    </div>
+  </div>
+</main>
+
 
   <footer>
     <nav class="bottom-nav" aria-label="Основное меню">
@@ -50,4 +59,53 @@
     </nav>
   </footer>
 </body>
+
+<script>
+  const chatInput = document.getElementById('chat-input');
+  const chatBtn = document.getElementById('chat-send-btn');
+  const chatMessages = document.getElementById('chat-messages');
+
+  // Простейший бот
+  const botResponses = {
+    'привет': 'Привет! Как я могу помочь?',
+    'как дела': 'У меня всё отлично, спасибо!',
+    'пока': 'До встречи! Хорошего дня!',
+  };
+
+  function addMessage(text, sender) {
+    const msg = document.createElement('div');
+    msg.classList.add('message', sender);
+    msg.innerText = text;
+    chatMessages.appendChild(msg);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+
+  function botReply(userMsg) {
+    let reply = 'Извините, я не понимаю. Попробуйте сказать что-то другое.';
+    const lower = userMsg.toLowerCase();
+    for (const key in botResponses) {
+      if (lower.includes(key)) {
+        reply = botResponses[key];
+        break;
+      }
+    }
+    setTimeout(() => addMessage(reply, 'bot'), 500); // имитация задержки
+  }
+
+  chatBtn.addEventListener('click', () => {
+    const msg = chatInput.value.trim();
+    if (!msg) return;
+    addMessage(msg, 'user');
+    chatInput.value = '';
+    botReply(msg);
+  });
+
+  chatInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+      chatBtn.click();
+    }
+  });
+</script>
+
+
 </html>
