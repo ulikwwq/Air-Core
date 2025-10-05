@@ -5,41 +5,91 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Главная</title>
   <link rel="stylesheet" href="css/styles.css">
-  <!-- Подключение Font Awesome -->
+  <!-- Подключение Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <!-- Хэдер с иконкой профиля, поиском и кнопкой геолокации -->
-    <div class="header-left">
-      <button class="profile-btn" aria-label="Профиль" aria-haspopup="true" aria-expanded="false">
-        <!-- SVG иконка профиля -->
-        <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
-          <circle cx="12" cy="8" r="4"></circle>
-          <path d="M4 20c0-4 4-6 8-6s8 2 8 6"></path>
-        </svg>
-      </button>
-      <div class="dropdown" aria-hidden="true">
-        <a href="#" aria-label="Перейти в профиль">Профиль</a>
-        <a href="#" aria-label="Войти в аккаунт">Вход</a>
-      </div>
+  <header class="d-flex justify-content-between align-items-center p-3">
+    <a href="index.html" class="profile-btn btn btn-light rounded-circle" aria-label="Профиль">
+      <!-- SVG иконка профиля -->
+      <svg width="32" height="32" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+        <circle cx="16" cy="10" r="8"></circle>
+        <path d="M6 28c0-6 6-9 10-9s10 3 10 9"></path>
+      </svg>
+    </a>
+    <div class="search-container w-50">
+      <input type="text" id="search" class="form-control" placeholder="Поиск..." aria-label="Поле поиска">
     </div>
-    <input type="text" id="search" placeholder="Поиск..." aria-label="Поле поиска">
-    <button id="geolocation-btn" aria-label="Определить местоположение">📍</button>
+    <button id="geolocation-btn" class="btn btn-primary" aria-label="Определить местоположение">
+      <i class="fas fa-map-marker-alt"></i> Геолокация
+    </button>
   </header>
 
-  <main>
-    <h1>Добро пожаловать!</h1>
-    <p>Краткое описание проекта.</p>
-    <nav>
-      <ul>
-        <li><a href="map.html">Карта</a></li>
-        <li><a href="health.html">Советы по здоровью</a></li>
-        <li><a href="chat.html">Чат-бот</a></li>
-        <li><a href="news.html">Новости</a></li>
-        <li><a href="menu.html">Меню</a></li>
-      </ul>
-    </nav>
+  <main class="container mt-5">
+    <div class="text-center">
+      <h1 class="display-4">Добро пожаловать</h1>
+      <p class="lead mt-3">Air & Care: Пути данных к здоровым городам</p>
+    </div>
+
+    <!-- Блоки с новостями -->
+    <section class="mt-5">
+      <h2 class="mb-4">Последние новости</h2>
+      <div class="row row-cols-1 row-cols-md-2 g-4">
+        <!-- Новость 1 -->
+        <div class="col">
+          <div class="card h-100">
+            <img src="https://via.placeholder.com/400x200" class="card-img-top" alt="Космос">
+            <div class="card-body">
+              <h5 class="card-title">НАСА обнаружило новую экзопланету</h5>
+              <p class="card-text">Астрономы НАСА сообщили об открытии экзопланеты, которая может быть пригодна для жизни. Она находится в 100 световых годах от Земли.</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Опубликовано: 10 октября 2023</small>
+            </div>
+          </div>
+        </div>
+        <!-- Новость 2 -->
+        <div class="col">
+          <div class="card h-100">
+            <img src="https://via.placeholder.com/400x200" class="card-img-top" alt="Смог">
+            <div class="card-body">
+              <h5 class="card-title">Смог в мегаполисах: причины и решения</h5>
+              <p class="card-text">Ученые предлагают новые методы борьбы с загрязнением воздуха в крупных городах, включая использование зеленых технологий и фильтров.</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Опубликовано: 8 октября 2023</small>
+            </div>
+          </div>
+        </div>
+        <!-- Новость 3 -->
+        <div class="col">
+          <div class="card h-100">
+            <img src="https://via.placeholder.com/400x200" class="card-img-top" alt="Космос">
+            <div class="card-body">
+              <h5 class="card-title">Миссия на Марс: новые подробности</h5>
+              <p class="card-text">Илон Маск поделился новыми деталями о планах SpaceX по колонизации Марса. Первый запуск ожидается в 2026 году.</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Опубликовано: 5 октября 2023</small>
+            </div>
+          </div>
+        </div>
+        <!-- Новость 4 -->
+        <div class="col">
+          <div class="card h-100">
+            <img src="https://via.placeholder.com/400x200" class="card-img-top" alt="Смог">
+            <div class="card-body">
+              <h5 class="card-title">Как защитить себя от смога</h5>
+              <p class="card-text">Эксперты рекомендуют использовать маски, очищающие устройства и избегать прогулок в часы пик, чтобы минимизировать вред от загрязнения воздуха.</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Опубликовано: 3 октября 2023</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer>
