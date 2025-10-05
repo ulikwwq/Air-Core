@@ -1,0 +1,71 @@
+/* Базовые стили */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f7f8fa;
+  color: #333;
+}
+
+header, footer {
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header input {
+  flex: 1;
+  margin: 0 10px;
+  padding: 5px;
+}
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px 0; /* Увеличен отступ */
+}
+
+.bottom-nav a {
+  text-align: center;
+  flex: 1;
+  color: #0b6efd;
+  text-decoration: none;
+  font-size: 14px; /* Увеличен размер шрифта */
+  transition: color 0.3s, transform 0.2s;
+}
+
+.bottom-nav a:hover {
+  color: #0056b3;
+  transform: scale(1.2); /* Увеличен эффект при наведении */
+}
+
+.bottom-nav svg {
+  display: block;
+  margin: 0 auto;
+  width: 32px; /* Увеличен размер иконок */
+  height: 32px;
+  fill: currentColor;
+}
+
+.bottom-nav span {
+  display: none; /* Скрыт текст, оставлены только иконки */
+}
+
+.bottom-nav i {
+  font-size: 24px; /* Размер иконок */
+  color: #0b6efd;
+  transition: color 0.3s, transform 0.2s;
+}
+
+.bottom-nav a:hover i {
+  color: #0056b3;
+  transform: scale(1.2); /* Эффект увеличения при наведении */
+}

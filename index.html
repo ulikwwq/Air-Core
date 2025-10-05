@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Главная</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- Подключение Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <!-- Хэдер с иконкой профиля, поиском и кнопкой геолокации -->
+    <div class="header-left">
+      <button class="profile-btn" aria-label="Профиль" aria-haspopup="true" aria-expanded="false">
+        <!-- SVG иконка профиля -->
+        <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+          <circle cx="12" cy="8" r="4"></circle>
+          <path d="M4 20c0-4 4-6 8-6s8 2 8 6"></path>
+        </svg>
+      </button>
+      <div class="dropdown" aria-hidden="true">
+        <a href="#" aria-label="Перейти в профиль">Профиль</a>
+        <a href="#" aria-label="Войти в аккаунт">Вход</a>
+      </div>
+    </div>
+    <input type="text" id="search" placeholder="Поиск..." aria-label="Поле поиска">
+    <button id="geolocation-btn" aria-label="Определить местоположение">📍</button>
+  </header>
+
+  <main>
+    <h1>Добро пожаловать!</h1>
+    <p>Краткое описание проекта.</p>
+    <nav>
+      <ul>
+        <li><a href="map.html">Карта</a></li>
+        <li><a href="health.html">Советы по здоровью</a></li>
+        <li><a href="chat.html">Чат-бот</a></li>
+        <li><a href="news.html">Новости</a></li>
+        <li><a href="menu.html">Меню</a></li>
+      </ul>
+    </nav>
+  </main>
+
+  <footer>
+    <!-- Фиксированное нижнее меню -->
+    <nav class="bottom-nav" aria-label="Основное меню">
+      <a href="map.html" aria-label="Открыть карту">
+        <i class="fas fa-map-marked-alt"></i>
+        <span>Карта</span>
+      </a>
+      <a href="health.html" aria-label="Открыть советы по здоровью">
+        <i class="fas fa-heartbeat"></i>
+        <span>Здоровье</span>
+      </a>
+      <a href="chat.html" aria-label="Открыть чат-бота">
+        <i class="fas fa-comments"></i>
+        <span>Чат</span>
+      </a>
+      <a href="news.html" aria-label="Открыть новости">
+        <i class="fas fa-newspaper"></i>
+        <span>Новости</span>
+      </a>
+      <a href="menu.html" aria-label="Открыть меню">
+        <i class="fas fa-bars"></i>
+        <span>Меню</span>
+      </a>
+    </nav>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
