@@ -297,4 +297,78 @@ footer {
   text-decoration: none; /* убираем подчёркивание ссылок */
 }
 
+/* ===== Информационные блоки ===== */
+.info-block {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+  padding: 16px;
+  margin: 12px auto;
+  max-width: 100%;          /* растягиваем на всю ширину контейнера */
+  width: 100%;              /* для мобильных экранов */
+  text-decoration: none;    /* убираем подчеркивание ссылок */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
 
+.info-block:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.08);
+}
+
+.info-icon {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #0b6efd, #0056b3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: #fff;
+  flex-shrink: 0; /* не сжимается */
+}
+
+.info-content h2 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 6px 0;
+  color: #0b6efd;
+}
+
+.info-content p {
+  font-size: 14px;
+  margin: 0;
+  line-height: 1.5;
+  color: #333;
+}
+
+/* ===== Адаптивность ===== */
+@media (max-width: 576px) {
+  .info-block {
+    flex-direction: row;
+    padding: 12px;
+    border-radius: 10px;
+    margin: 8px;
+    overflow: hidden;   /* чтобы текст не выходил за границы */
+  }
+  .info-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+  .info-content h2 {
+    font-size: 15px;
+  }
+  .info-content p {
+    font-size: 14px;
+  }
+}
+
+main.container {
+  padding-left: 10px;
+  padding-right: 10px;
+}
